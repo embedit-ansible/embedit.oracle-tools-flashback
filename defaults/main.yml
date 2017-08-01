@@ -1,0 +1,3 @@
+---
+# defaults file for embedit.oracle-tools-flashback
+restore_point_name: fresh_installation

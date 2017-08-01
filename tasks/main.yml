@@ -1,0 +1,19 @@
+---
+# tasks file for embedit.oracle-tools-flashback
+- name: Flashback to restore point '{{ restore_point_name }}'
+  shell: |
+    . /etc/bashrc && echo "WHENEVER SQLERROR EXIT 1;
+    shutdown immediate;
+    startup restrict mount;
+
+    FLASHBACK DATABASE TO RESTORE POINT {{ restore_point_name }};
+
+    alter database open RESETLOGS;
+
+    DROP RESTORE POINT {{ restore_point_name }};
+    CREATE RESTORE POINT {{ restore_point_name }} GUARANTEE FLASHBACK DATABASE;
+
+    ALTER SYSTEM DISABLE RESTRICTED SESSION;" | sqlplus / as sysdba
+  become: true
+  become_user: oracle
+

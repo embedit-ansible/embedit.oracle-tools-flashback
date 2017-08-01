@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Mario Vejlupek
+  description: Flashback Oracle database to restore point and reset flashback
+  issue_tracker_url: https://github.com/embedit-ansible/embedit.oracle-tools-flashback/issues
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: EL
+      versions:
+        - all
+  galaxy_tags:
+    - oracle
+    - sqlplus
+    - flashback
+dependencies: []
