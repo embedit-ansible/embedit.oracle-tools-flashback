@@ -19,7 +19,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: embedit.oracle-tools-flashback, restore_point_name: some_restore_point }
+         - { role: embedit-ansible.oracle-tools-flashback, restore_point_name: some_restore_point }
 
 License
 -------
